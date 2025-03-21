@@ -365,3 +365,47 @@ input:disabled {
     transition: none !important;
   }
 }
+
+/* Definición de variables para tema claro (por defecto) */
+:root {
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --header-background: #007bff;
+  --header-text-color: #fff;
+  --card-background: #e9ecef;
+  --card-text-color: #333;
+}
+
+/* Estilos generales (ya definidos) se mantienen */
+
+/* ... aquí tus estilos existentes para admin.css ... */
+
+/* Modo oscuro */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --header-background: #1f1f1f;
+  --header-text-color: #e0e0e0;
+  --card-background: #1e1e1e;
+  --card-text-color: #e0e0e0;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Actualiza algunos elementos para usar las variables */
+header {
+  background: var(--header-background);
+  color: var(--header-text-color);
+}
+
+.user-list-section li {
+  background: var(--card-background);
+  color: var(--card-text-color);
+}
+
+/* Puedes ajustar otros elementos según prefieras */

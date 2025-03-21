@@ -6,7 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = '/login.html';
       return;
     }
-  
+   // Manejo del Dark Mode
+   const darkModeToggle = document.getElementById('dark-mode-toggle');
+   // Al cargar la página, revisa si ya se ha guardado una preferencia en localStorage
+   if (localStorage.getItem('theme') === 'dark') {
+     document.body.classList.add('dark-mode');
+     darkModeToggle.textContent = 'Modo Claro';
+   } else {
+     darkModeToggle.textContent = 'Modo Oscuro';
+   }
+ 
+   darkModeToggle.addEventListener('click', function() {
+     document.body.classList.toggle('dark-mode');
+     // Guarda la preferencia en localStorage
+     if (document.body.classList.contains('dark-mode')) {
+       localStorage.setItem('theme', 'dark');
+       darkModeToggle.textContent = 'Modo Claro';
+     } else {
+       localStorage.setItem('theme', 'light');
+       darkModeToggle.textContent = 'Modo Oscuro';
+     }
+   });
+ 
     const userListEl = document.getElementById('user-list');
     const updateUserForm = document.getElementById('update-user-form');
     const userIdInput = document.getElementById('user-id');
