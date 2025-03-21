@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de Administración de Usuarios</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <header>
+      <h1>Gestión de Usuarios</h1>
+    </header>
+    <section class="user-list-section">
+      <h2>Usuarios Registrados</h2>
+      <ul id="user-list"></ul>
+    </section>
+    <section class="user-form-section">
+      <h2>Actualizar Usuario</h2>
+      <form id="update-user-form">
+        <input id="user-id" type="text" placeholder="ID del Usuario" readonly>
+        <input id="user-name" type="text" placeholder="Nombre">
+        <input id="user-email" type="email" placeholder="Email">
+        <select id="user-role">
+          <option value="user">Usuario</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Actualizar Usuario</button>
+      </form>
+    </section>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
